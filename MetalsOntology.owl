@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/MetalsOntology#"
+     xml:base="http://www.example.org/MetalsOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/MetalsOntology"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="#Element"/>
+    <owl:Class rdf:about="#Metal">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+    </owl:Class>
+    <owl:Class rdf:about="#NonMetal">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Metalloid">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+    </owl:Class>
+    <owl:Class rdf:about="#PhysicalProperty"/>
+    <owl:Class rdf:about="#ChemicalProperty"/>
+    <owl:Class rdf:about="#PeriodicTableGroup"/>
+    <owl:Class rdf:about="#PeriodicTablePeriod"/>
+    <owl:Class rdf:about="#AtomicProperty"/>
+
+    <!-- Subclasses of Metal -->
+    <owl:Class rdf:about="#AlkaliMetal">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+    <owl:Class rdf:about="#AlkalineEarthMetal">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+    <owl:Class rdf:about="#TransitionMetal">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Lanthanide">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Actinide">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+    <owl:Class rdf:about="#PostTransitionMetal">
+        <rdfs:subClassOf rdf:resource="#Metal"/>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#hasPhysicalProperty">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#PhysicalProperty"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#hasChemicalProperty">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#ChemicalProperty"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#belongsToGroup">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#PeriodicTableGroup"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#belongsToPeriod">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="#PeriodicTablePeriod"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="#hasAtomicNumber">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasAtomicWeight">
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasDensity">
+        <rdfs:domain rdf:resource="#PhysicalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasMeltingPoint">
+        <rdfs:domain rdf:resource="#PhysicalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasBoilingPoint">
+        <rdfs:domain rdf:resource="#PhysicalProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasStateAtRoomTemperature">
+        <rdfs:domain rdf:resource="#PhysicalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasElectronConfiguration">
+        <rdfs:domain rdf:resource="#AtomicProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#hasValenceElectrons">
+        <rdfs:domain rdf:resource="#ChemicalProperty"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+    <!-- Individuals -->
+    <rdf:Description rdf:about="#Sodium">
+        <rdf:type rdf:resource="#AlkaliMetal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">11</hasAtomicNumber>
+        <hasAtomicWeight rdf:datatype="&xsd;float">22.99</hasAtomicWeight>
+        <belongsToGroup rdf:resource="#Group1"/>
+        <belongsToPeriod rdf:resource="#Period3"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Iron">
+        <rdf:type rdf:resource="#TransitionMetal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">26</hasAtomicNumber>
+        <hasAtomicWeight rdf:datatype="&xsd;float">55.85</hasAtomicWeight>
+        <belongsToGroup rdf:resource="#Group8"/>
+        <belongsToPeriod rdf:resource="#Period4"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Gold">
+        <rdf:type rdf:resource="#TransitionMetal"/>
+        <hasAtomicNumber rdf:datatype="&xsd;integer">79</hasAtomicNumber>
+        <hasAtomicWeight rdf:datatype="&xsd;float">196.97</hasAtomicWeight>
+        <belongsToGroup rdf:resource="#Group11"/>
+        <belongsToPeriod rdf:resource="#Period6"/>
+    </rdf:Description>
+
+</rdf:RDF>
