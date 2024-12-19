@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.com/mathITS#"
+     xml:base="http://www.example.com/mathITS"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://www.example.com/mathITS"/>
+
+  <!-- Domain Knowledge -->
+
+  <owl:Class rdf:ID="DomainKnowledge"/>
+
+  <owl:Class rdf:ID="MathematicalConcepts">
+    <rdfs:subClassOf rdf:resource="#DomainKnowledge"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="NumbersAndOperations">
+    <rdfs:subClassOf rdf:resource="#MathematicalConcepts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Algebra">
+    <rdfs:subClassOf rdf:resource="#MathematicalConcepts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Geometry">
+    <rdfs:subClassOf rdf:resource="#MathematicalConcepts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="DataAndStatistics">
+    <rdfs:subClassOf rdf:resource="#MathematicalConcepts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="ProblemTypes">
+    <rdfs:subClassOf rdf:resource="#DomainKnowledge"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="SolutionStrategies">
+    <rdfs:subClassOf rdf:resource="#DomainKnowledge"/>
+  </owl:Class>
+
+  <!-- Learner Knowledge -->
+
+  <owl:Class rdf:ID="LearnerKnowledge"/>
+
+  <owl:Class rdf:ID="KnowledgeStates">
+    <rdfs:subClassOf rdf:resource="#LearnerKnowledge"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Misconceptions">
+    <rdfs:subClassOf rdf:resource="#LearnerKnowledge"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="CognitiveLoad">
+    <rdfs:subClassOf rdf:resource="#LearnerKnowledge"/>
+  </owl:Class>
+
+  <!-- Learning Objectives -->
+
+  <owl:Class rdf:ID="LearningObjectives"/>
+
+  <owl:Class rdf:ID="ConceptualUnderstanding">
+    <rdfs:subClassOf rdf:resource="#LearningObjectives"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="ProceduralFluency">
+    <rdfs:subClassOf rdf:resource="#LearningObjectives"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Application">
+    <rdfs:subClassOf rdf:resource="#LearningObjectives"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="ProblemSolvingSkills">
+    <rdfs:subClassOf rdf:resource="#LearningObjectives"/>
+  </owl:Class>
+
+  <!-- ITS Components -->
+
+  <owl:Class rdf:ID="ITSComponents"/>
+
+  <owl:Class rdf:ID="ProblemGenerator">
+    <rdfs:subClassOf rdf:resource="#ITSComponents"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="SolutionEvaluator">
+    <rdfs:subClassOf rdf:resource="#ITSComponents"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="FeedbackMechanisms">
+    <rdfs:subClassOf rdf:resource="#ITSComponents"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="LearnerModeling">
+    <rdfs:subClassOf rdf:resource="#ITSComponents"/>
+  </owl:Class>
+
+  <!-- Interaction and Pedagogy -->
+
+  <owl:Class rdf:ID="InteractionAndPedagogy"/>
+
+  <owl:Class rdf:ID="Scaffolding">
+    <rdfs:subClassOf rdf:resource="#InteractionAndPedagogy"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Engagement">
+    <rdfs:subClassOf rdf:resource="#InteractionAndPedagogy"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Collaboration">
+    <rdfs:subClassOf rdf:resource="#InteractionAndPedagogy"/>
+  </owl:Class>
+
+  <!-- Assessment and Analytics -->
+
+  <owl:Class rdf:ID="AssessmentAndAnalytics"/>
+
+  <owl:Class rdf:ID="DiagnosticAssessment">
+    <rdfs:subClassOf rdf:resource="#AssessmentAndAnalytics"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="FormativeAssessment">
+    <rdfs:subClassOf rdf:resource="#AssessmentAndAnalytics"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="SummativeAssessment">
+    <rdfs:subClassOf rdf:resource="#AssessmentAndAnalytics"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="AnalyticsDashboards">
+    <rdfs:subClassOf rdf:resource="#AssessmentAndAnalytics"/>
+  </owl:Class>
+
+  <!-- External Contexts -->
+
+  <owl:Class rdf:ID="ExternalContexts"/>
+
+  <owl:Class rdf:ID="StandardsAlignment">
+    <rdfs:subClassOf rdf:resource="#ExternalContexts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="IntegrationWithOtherSubjects">
+    <rdfs:subClassOf rdf:resource="#ExternalContexts"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="RealWorldApplications">
+    <rdfs:subClassOf rdf:resource="#ExternalContexts"/>
+  </owl:Class>
+
+</rdf:RDF>
